@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+.message-box{
+	height:300px;
+	width:300px;
+}
+
+.message-input{
+	width:190px;
+}
+
+.message-send{
+	width:100px;
+	margin-left:10px;
+}
