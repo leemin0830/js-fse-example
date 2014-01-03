@@ -3,24 +3,24 @@ var msgsend = document.getElementById('msgsend');
 var msgbox = document.getElementById('msgbox');
 var ws;
 
-function send(msg){
+function send(msg) {
 	ws.send(msg);
 }
 
-function append(msg){
-	msgbox.value+=('\n'+msg);
+function append(msg) {
+	msgbox.value += ('\n' + msg);
 }
 
-function onsend(evt){
-	if(msginput.value.length>0){
+function onSendClick(evt) {
+	if (msginput.value.length > 0) {
 		send(msginput.value);
 	}
-	msginput.value='';
+	msginput.value = '';
 }
 
-function checkEnter(evt){
-	if(evt.keyCode=='13'){
-		 onsend(evt);
+function checkEnter(evt) {
+	if (evt.keyCode == '13') {
+		onSendClick(evt);
 	}
 }
 
@@ -30,15 +30,14 @@ function init() {
 		append('connected');
 	};
 	ws.onmessage = function(evt) {
-		var msg = evt.data;
-		append(msg);
+		append(evt.data);
 	};
 	ws.onclose = function() {
 		append('Connection is closed...');
 	};
-	
-	msgsend.onclick=onsend;
-	msginput.onkeypress=checkEnter;
+
+	msgsend.onclick = onSendClick;
+	msginput.onkeypress = checkEnter;
 }
 
-init();
+onload = init;
