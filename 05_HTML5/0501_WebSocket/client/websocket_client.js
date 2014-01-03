@@ -1,6 +1,6 @@
-var msginput = document.getElementById('msginput');
-var msgsend = document.getElementById('msgsend');
-var msgbox = document.getElementById('msgbox');
+var msginput;
+var msgsend;
+var msgbox;
 var ws;
 
 function send(msg) {
@@ -25,6 +25,10 @@ function checkEnter(evt) {
 }
 
 function init() {
+	msginput = document.getElementById('msginput');
+    msgsend = document.getElementById('msgsend');
+    msgbox = document.getElementById('msgbox');
+
 	ws = new WebSocket('ws://localhost:8080/');
 	ws.onopen = function() {
 		append('connected');
