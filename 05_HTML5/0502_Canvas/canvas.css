@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+label[for="color"]{
+	margin-left:20px;
+}
+
+#mainCanvas{
+	cursor:default;
+	outline:1px solid black;
+}
