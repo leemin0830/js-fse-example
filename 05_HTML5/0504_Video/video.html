@@ -5,12 +5,15 @@
 <script type="text/javascript" src="video.js"></script>
 </head>
 <body>
-	<video id="myVideo" width="300px">
-	</video>
-	<div>
-		<button id="btnPlayPause">Play/Pause</button>
-		<button id="btnStop">Stop</button>
-		<button id="btnFullscreen">Fullscreen</button>
+	<div class="player">
+		<video id="myVideo" class='video'></video>
+		<div class="control-bar">
+			<button id="btnPlayPause" class="control">Play</button>
+			<button id="btnStop" class="control">Stop</button>
+			<button id="btnVolUp" class="control">Vol+</button>
+			<button id="btnVolDown" class="control">Vol-</button>
+			<button id="btnFullscreen" class="control">Fullscreen</button>
+		</div>
 	</div>
 </body>
 </html>
